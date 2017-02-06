@@ -40,7 +40,6 @@ namespace LiveBot
             Console.WriteLine("[INFO] Stream Request Success!\nStream URL : rtmp://rtmp-api.facebook.com:80/rtmp/");
             Console.WriteLine("Stream Key : " + result.stream_url.Replace("rtmp://rtmp-api.facebook.com:80/rtmp/", ""));
             Console.ReadKey();
-            //Console.WriteLine("[WARNING] Stream Request Canceled.");
             WebServer ws = new WebServer(getComment, "http://127.0.0.1:8080/getComment/");
             ws.Run();
             Console.WriteLine("Type :quit to Exit!");
@@ -63,9 +62,7 @@ namespace LiveBot
             String outputString = "";
             while (isFinished == false)
             {
-                //Console.WriteLine(url);
-                
-
+          
                 RestRequest rComments = new RestRequest(url);
                 rComments.AddParameter("access_token", jsonParse.GetValue("token").ToString());
 
